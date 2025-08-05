@@ -1,0 +1,30 @@
+body {
+  background-color: #111;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+img#vinyl {
+  width: 300px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+}
+
+img#vinyl:active {
+  transform: scale(0.95);
+}
+
+audio {
+  width: 300px;
+}
