@@ -33,7 +33,19 @@ audio {
   width: 300px;
 }
 
-/* Rotation animation */
+/* Add this at the bottom of style.css */
+
+#vinyl {
+  transition: transform 1s ease-out;
+  transform-origin: 50% 50%;
+}
+
+/* Continuous spin while playing */
+.spin {
+  animation: spin 3s linear infinite;
+}
+
+/* Define spin animation */
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -43,7 +55,3 @@ audio {
   }
 }
 
-/* Class to trigger spinning */
-.spin {
-  animation: spin 3s linear infinite;
-}
