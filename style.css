@@ -41,6 +41,21 @@ audio {
   transform-origin: 50% 50%;
 }
 
+#winnieGif {
+  position: fixed;       /* fixed so it stays put during scroll */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;           /* large but responsive width */
+  height: auto;
+  opacity: 0;            /* start invisible */
+  pointer-events: none;  /* clicks pass through */
+  z-index: -1;           /* behind all other content */
+  transition: opacity 2s ease;  /* smooth fade in/out */
+}
+#winnieGif.visible {
+  opacity: 1;
+}
 
 
 
