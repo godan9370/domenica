@@ -1,6 +1,7 @@
 const vinyl = document.getElementById('vinyl');
 const audio = document.getElementById('audio');
 const trackSelect = document.getElementById('trackSelect');
+const winnieGif = document.getElementById('winnieGif');
 
 let angle = 0;
 let speed = 0; // rotation speed in degrees per frame
@@ -43,6 +44,7 @@ function animate() {
 }
 
 animate(); // Start animation loop
+
 
 
 
