@@ -35,15 +35,12 @@ trackSelect.addEventListener('change', () => {
   audio.play();
 });
 
-// Rotate the vinyl smoothly
 function animate() {
-  // Smoothly ramp speed up or down
-  speed += (targetSpeed - speed) * 0.05;
-
+  speed += (targetSpeed - speed) * 0.2; // ← faster ramp
   angle += speed;
   vinyl.style.transform = `rotate(${angle}deg)`;
-
   requestAnimationFrame(animate);
 }
 
 animate(); // Start animation loop
+
