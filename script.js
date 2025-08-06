@@ -19,7 +19,7 @@ vinyl.addEventListener('click', () => {
 // When audio plays
 audio.addEventListener('play', () => {
   isPlaying = true;
-  targetSpeed = 3; // adjust for faster/slower spin
+  targetSpeed = 2; // adjust for faster/slower spin
 });
 
 // When audio pauses
@@ -43,5 +43,6 @@ function animate() {
 }
 
 animate(); // Start animation loop
+
 
 
