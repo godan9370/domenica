@@ -42,20 +42,30 @@ audio {
 }
 
 #winnieGif {
-  position: fixed;       /* fixed so it stays put during scroll */
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80vw;           /* large but responsive width */
+  width: 80vw;
   height: auto;
-  opacity: 0;            /* start invisible */
-  pointer-events: none;  /* clicks pass through */
-  z-index: -1;           /* behind all other content */
-  transition: opacity 2s ease;  /* smooth fade in/out */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0; /* changed from -1 */
+  transition: opacity 2s ease;
+  user-select: none;
 }
+
+/* To put it truly behind, add this on the *page container* or body: */
+body {
+  position: relative; /* create stacking context */
+  z-index: 1;        /* higher than winnieGif */
+}
+
+/* Show the gif */
 #winnieGif.visible {
   opacity: 1;
 }
+
 
 
 
