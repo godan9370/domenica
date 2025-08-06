@@ -2,7 +2,12 @@ const vinyl = document.getElementById('vinyl');
 const audio = document.getElementById('audio');
 const trackSelect = document.getElementById('trackSelect');
 
-// Toggle play/pause when clicking the vinyl
+let angle = 0;
+let speed = 0; // rotation speed in degrees per frame
+let targetSpeed = 0;
+let isPlaying = false;
+
+// Click vinyl to toggle play/pause
 vinyl.addEventListener('click', () => {
   if (audio.paused) {
     audio.play();
@@ -11,19 +16,34 @@ vinyl.addEventListener('click', () => {
   }
 });
 
-// Start spinning when audio plays
+// When audio plays
 audio.addEventListener('play', () => {
-  vinyl.classList.add('spin');
+  isPlaying = true;
+  targetSpeed = 1.2; // adjust for faster/slower spin
 });
 
-// Smooth stop when audio pauses
+// When audio pauses
 audio.addEventListener('pause', () => {
-  vinyl.classList.remove('spin');
+  isPlaying = false;
+  targetSpeed = 0;
 });
 
-// Change track
+// When changing track
 trackSelect.addEventListener('change', () => {
   const selectedTrack = trackSelect.value;
   audio.src = selectedTrack;
   audio.play();
 });
+
+// Rotate the vinyl smoothly
+function animate() {
+  // Smoothly ramp speed up or down
+  speed += (targetSpeed - speed) * 0.05;
+
+  angle += speed;
+  vinyl.style.transform = `rotate(${angle}deg)`;
+
+  requestAnimationFrame(animate);
+}
+
+animate(); // Start animation loop
