@@ -15,12 +15,13 @@ body {
 }
 
 #vinyl {
-  width: 300px;
+  width: 150px; /* Try 100px–200px depending on your taste */
+  height: auto;
   cursor: pointer;
   margin-bottom: 20px;
-  transition: transform 0.2s;
+  transition: transform 1s ease-out;
+  transform-origin: 50% 50%;
 }
-
 #vinyl:active {
   transform: scale(0.95);
 }
