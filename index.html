@@ -1,37 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vinyl Player</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
+  <!-- Background GIF -->
   <img id="winnieGif" src="Winnie.gif" alt="Winnie GIF" />
-  <div id="container">
+
+  <!-- Main content wrapper -->
   <div class="container">
-    <!-- Vinyl Record Image -->
     <img src="vinyl.png" alt="Vinyl Record" id="vinyl" />
 
-    <!-- Track Selector -->
     <div class="track-selector">
       <label for="trackSelect">Choose a track:</label>
       <select id="trackSelect">
         <option value="Track 1.mp3">Track 1</option>
         <option value="Track 2.mp3">Track 2</option>
-        <!-- Add more tracks here -->
       </select>
     </div>
 
-    <!-- Audio Player -->
     <audio id="audio" controls>
-      <source src="Track 1.mp3" type="audio/mpeg">
+      <source src="Track 1.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
   </div>
-
-  <script src="script.js"></script>
 </body>
-</html>
-
-
