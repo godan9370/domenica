@@ -15,18 +15,20 @@ vinyl.addEventListener('click', () => {
   } else {
     audio.pause();
   }
+  
 });
 
 // When audio plays
 audio.addEventListener('play', () => {
   isPlaying = true;
-  targetSpeed = 2; // adjust for faster/slower spin
+  targetSpeed = 2;
+  winnieGif.classList.add('visible');   // fade in GIF
 });
 
-// When audio pauses
 audio.addEventListener('pause', () => {
   isPlaying = false;
   targetSpeed = 0;
+  winnieGif.classList.remove('visible'); // fade out GIF
 });
 
 // When changing track
@@ -44,6 +46,7 @@ function animate() {
 }
 
 animate(); // Start animation loop
+
 
 
 
